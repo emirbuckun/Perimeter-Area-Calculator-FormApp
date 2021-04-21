@@ -59,19 +59,19 @@
             this.radioLabel.AutoSize = true;
             this.radioLabel.Location = new System.Drawing.Point(34, 13);
             this.radioLabel.Name = "radioLabel";
-            this.radioLabel.Size = new System.Drawing.Size(88, 15);
+            this.radioLabel.Size = new System.Drawing.Size(84, 15);
             this.radioLabel.TabIndex = 0;
-            this.radioLabel.Text = "Bir şekil seçiniz:";
+            this.radioLabel.Text = "Select a shape:";
             // 
             // circleButton
             // 
             this.circleButton.AutoSize = true;
             this.circleButton.Location = new System.Drawing.Point(34, 36);
             this.circleButton.Name = "circleButton";
-            this.circleButton.Size = new System.Drawing.Size(52, 19);
+            this.circleButton.Size = new System.Drawing.Size(55, 19);
             this.circleButton.TabIndex = 1;
             this.circleButton.TabStop = true;
-            this.circleButton.Text = "Daire";
+            this.circleButton.Text = "Circle";
             this.circleButton.UseVisualStyleBackColor = true;
             this.circleButton.CheckedChanged += new System.EventHandler(this.circleButton_CheckedChanged);
             // 
@@ -80,10 +80,10 @@
             this.squareButton.AutoSize = true;
             this.squareButton.Location = new System.Drawing.Point(34, 62);
             this.squareButton.Name = "squareButton";
-            this.squareButton.Size = new System.Drawing.Size(48, 19);
+            this.squareButton.Size = new System.Drawing.Size(61, 19);
             this.squareButton.TabIndex = 2;
             this.squareButton.TabStop = true;
-            this.squareButton.Text = "Kare";
+            this.squareButton.Text = "Square";
             this.squareButton.UseVisualStyleBackColor = true;
             this.squareButton.CheckedChanged += new System.EventHandler(this.squareButton_CheckedChanged);
             // 
@@ -92,10 +92,10 @@
             this.rectangleButton.AutoSize = true;
             this.rectangleButton.Location = new System.Drawing.Point(34, 88);
             this.rectangleButton.Name = "rectangleButton";
-            this.rectangleButton.Size = new System.Drawing.Size(84, 19);
+            this.rectangleButton.Size = new System.Drawing.Size(77, 19);
             this.rectangleButton.TabIndex = 3;
             this.rectangleButton.TabStop = true;
-            this.rectangleButton.Text = "Dikdörtgen";
+            this.rectangleButton.Text = "Rectangle";
             this.rectangleButton.UseVisualStyleBackColor = true;
             this.rectangleButton.CheckedChanged += new System.EventHandler(this.rectangleButton_CheckedChanged);
             // 
@@ -104,10 +104,10 @@
             this.triangleButton.AutoSize = true;
             this.triangleButton.Location = new System.Drawing.Point(34, 114);
             this.triangleButton.Name = "triangleButton";
-            this.triangleButton.Size = new System.Drawing.Size(59, 19);
+            this.triangleButton.Size = new System.Drawing.Size(66, 19);
             this.triangleButton.TabIndex = 4;
             this.triangleButton.TabStop = true;
-            this.triangleButton.Text = "Üçgen";
+            this.triangleButton.Text = "Triangle";
             this.triangleButton.UseVisualStyleBackColor = true;
             this.triangleButton.CheckedChanged += new System.EventHandler(this.triangleButton_CheckedChanged);
             // 
@@ -124,9 +124,9 @@
             this.radiusLabel.AutoSize = true;
             this.radiusLabel.Location = new System.Drawing.Point(15, 30);
             this.radiusLabel.Name = "radiusLabel";
-            this.radiusLabel.Size = new System.Drawing.Size(45, 15);
+            this.radiusLabel.Size = new System.Drawing.Size(42, 15);
             this.radiusLabel.TabIndex = 7;
-            this.radiusLabel.Text = "Yarıçap";
+            this.radiusLabel.Text = "Radius";
             // 
             // lengthGroupBox
             // 
@@ -143,7 +143,7 @@
             this.lengthGroupBox.Size = new System.Drawing.Size(195, 175);
             this.lengthGroupBox.TabIndex = 8;
             this.lengthGroupBox.TabStop = false;
-            this.lengthGroupBox.Text = "Uzunluklar";
+            this.lengthGroupBox.Text = "Lengthes";
             // 
             // sideBox3
             // 
@@ -158,9 +158,9 @@
             this.sideLabel3.AutoSize = true;
             this.sideLabel3.Location = new System.Drawing.Point(15, 131);
             this.sideLabel3.Name = "sideLabel3";
-            this.sideLabel3.Size = new System.Drawing.Size(46, 15);
+            this.sideLabel3.Size = new System.Drawing.Size(38, 15);
             this.sideLabel3.TabIndex = 7;
-            this.sideLabel3.Text = "Kenar 3";
+            this.sideLabel3.Text = "Side 3";
             // 
             // sideBox2
             // 
@@ -183,18 +183,18 @@
             this.sideLabel2.AutoSize = true;
             this.sideLabel2.Location = new System.Drawing.Point(15, 98);
             this.sideLabel2.Name = "sideLabel2";
-            this.sideLabel2.Size = new System.Drawing.Size(46, 15);
+            this.sideLabel2.Size = new System.Drawing.Size(38, 15);
             this.sideLabel2.TabIndex = 7;
-            this.sideLabel2.Text = "Kenar 2";
+            this.sideLabel2.Text = "Side 2";
             // 
             // sideLabel1
             // 
             this.sideLabel1.AutoSize = true;
             this.sideLabel1.Location = new System.Drawing.Point(15, 65);
             this.sideLabel1.Name = "sideLabel1";
-            this.sideLabel1.Size = new System.Drawing.Size(46, 15);
+            this.sideLabel1.Size = new System.Drawing.Size(38, 15);
             this.sideLabel1.TabIndex = 7;
-            this.sideLabel1.Text = "Kenar 1";
+            this.sideLabel1.Text = "Side 1";
             // 
             // calculateButton
             // 
@@ -202,16 +202,16 @@
             this.calculateButton.Name = "calculateButton";
             this.calculateButton.Size = new System.Drawing.Size(126, 38);
             this.calculateButton.TabIndex = 9;
-            this.calculateButton.Text = "Çevre ve Alan Hesapla";
+            this.calculateButton.Text = "Calculate";
             this.calculateButton.UseVisualStyleBackColor = true;
             this.calculateButton.Click += new System.EventHandler(this.calculateButton_Click);
             // 
             // triangleTypeBox
             // 
-            this.triangleTypeBox.Location = new System.Drawing.Point(84, 95);
+            this.triangleTypeBox.Location = new System.Drawing.Point(96, 95);
             this.triangleTypeBox.Name = "triangleTypeBox";
             this.triangleTypeBox.ReadOnly = true;
-            this.triangleTypeBox.Size = new System.Drawing.Size(134, 23);
+            this.triangleTypeBox.Size = new System.Drawing.Size(122, 23);
             this.triangleTypeBox.TabIndex = 6;
             // 
             // triangleTypeLabel
@@ -219,9 +219,9 @@
             this.triangleTypeLabel.AutoSize = true;
             this.triangleTypeLabel.Location = new System.Drawing.Point(15, 98);
             this.triangleTypeLabel.Name = "triangleTypeLabel";
-            this.triangleTypeLabel.Size = new System.Drawing.Size(63, 15);
+            this.triangleTypeLabel.Size = new System.Drawing.Size(75, 15);
             this.triangleTypeLabel.TabIndex = 7;
-            this.triangleTypeLabel.Text = "Üçgen Tipi";
+            this.triangleTypeLabel.Text = "Triangle Type";
             // 
             // areaBox
             // 
@@ -238,16 +238,16 @@
             this.areaLabel.Name = "areaLabel";
             this.areaLabel.Size = new System.Drawing.Size(31, 15);
             this.areaLabel.TabIndex = 7;
-            this.areaLabel.Text = "Alan";
+            this.areaLabel.Text = "Area";
             // 
             // perimeterLabel
             // 
             this.perimeterLabel.AutoSize = true;
             this.perimeterLabel.Location = new System.Drawing.Point(15, 30);
             this.perimeterLabel.Name = "perimeterLabel";
-            this.perimeterLabel.Size = new System.Drawing.Size(37, 15);
+            this.perimeterLabel.Size = new System.Drawing.Size(58, 15);
             this.perimeterLabel.TabIndex = 7;
-            this.perimeterLabel.Text = "Çevre";
+            this.perimeterLabel.Text = "Perimeter";
             // 
             // perimeterBox
             // 
@@ -270,7 +270,7 @@
             this.resultGroupBox.Size = new System.Drawing.Size(233, 175);
             this.resultGroupBox.TabIndex = 8;
             this.resultGroupBox.TabStop = false;
-            this.resultGroupBox.Text = "Sonuçlar";
+            this.resultGroupBox.Text = "Results";
             // 
             // PerimeterAreaCalculatorForm
             // 
@@ -287,7 +287,7 @@
             this.Controls.Add(this.circleButton);
             this.Controls.Add(this.radioLabel);
             this.Name = "PerimeterAreaCalculatorForm";
-            this.Text = "Çevre ve Alan Ölçer";
+            this.Text = "Perimeter and Area Calculator";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.lengthGroupBox.ResumeLayout(false);
             this.lengthGroupBox.PerformLayout();

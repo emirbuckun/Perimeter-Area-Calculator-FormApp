@@ -26,7 +26,7 @@ namespace Perimeter_AreaCalculatorFormApp
 
         private void circleButton_CheckedChanged(object sender, EventArgs e)
         {
-            if (circleButton.Checked) // Daire seçilirse yarıçap göster
+            if (circleButton.Checked) // Circle selected, show radiusBox
             {
                 radiusLabel.Show();
                 radiusBox.Show();
@@ -41,7 +41,7 @@ namespace Perimeter_AreaCalculatorFormApp
 
         private void squareButton_CheckedChanged(object sender, EventArgs e)
         {
-            if (squareButton.Checked) // Kare seçilirse 1 kenar göster
+            if (squareButton.Checked) // Square selected, show side1
             {
                 radiusLabel.Hide();
                 radiusBox.Hide();
@@ -56,7 +56,7 @@ namespace Perimeter_AreaCalculatorFormApp
 
         private void rectangleButton_CheckedChanged(object sender, EventArgs e)
         {
-            if (rectangleButton.Checked) // Dikdörtgen seçilirse 2 kenar göster
+            if (rectangleButton.Checked) // Rectangle selected, show side1 and side2
             {
                 radiusLabel.Hide();
                 radiusBox.Hide();
@@ -71,7 +71,7 @@ namespace Perimeter_AreaCalculatorFormApp
 
         private void triangleButton_CheckedChanged(object sender, EventArgs e)
         {
-            if (triangleButton.Checked) // Üçgen seçilirse 3 kenar göster
+            if (triangleButton.Checked) // Triangle selected, show all sides
             {
                 radiusLabel.Hide();
                 radiusBox.Hide();
@@ -86,13 +86,14 @@ namespace Perimeter_AreaCalculatorFormApp
 
         #endregion
 
+        // Check input valid or not
         #region textBox Methods
 
         private void radiusBox_TextChanged(object sender, EventArgs e)
         {
             if (!System.Text.RegularExpressions.Regex.IsMatch(radiusBox.Text, @"^[0-9]*(?:\,[0-9]*)?$"))
             {
-                MessageBox.Show("Lütfen sadece sayı giriniz.");
+                MessageBox.Show("Please enter a number.");
                 radiusBox.Clear();
             }
         }
@@ -101,7 +102,7 @@ namespace Perimeter_AreaCalculatorFormApp
         {
             if (!System.Text.RegularExpressions.Regex.IsMatch(sideBox1.Text, @"^[0-9]*(?:\,[0-9]*)?$"))
             {
-                MessageBox.Show("Lütfen sadece sayı giriniz.");
+                MessageBox.Show("Please enter a number.");
                 sideBox1.Clear();
             }
         }
@@ -110,7 +111,7 @@ namespace Perimeter_AreaCalculatorFormApp
         {
             if (!System.Text.RegularExpressions.Regex.IsMatch(sideBox2.Text, @"^[0-9]*(?:\,[0-9]*)?$"))
             {
-                MessageBox.Show("Lütfen sadece sayı giriniz.");
+                MessageBox.Show("Please enter a number.");
                 sideBox2.Clear();
             }
         }
@@ -119,19 +120,20 @@ namespace Perimeter_AreaCalculatorFormApp
         {
             if (!System.Text.RegularExpressions.Regex.IsMatch(sideBox3.Text, @"^[0-9]*(?:\,[0-9]*)?$"))
             {
-                MessageBox.Show("Lütfen sadece sayı giriniz.");
+                MessageBox.Show("Please enter a number.");
                 sideBox3.Clear();
             }
         }
 
         #endregion
 
+        // Calculates the perimeter and area
         private void calculateButton_Click(object sender, EventArgs e)
         {
             double perimeter = 0;
             double area = 0;
 
-            if (circleButton.Checked && radiusBox.TextLength > 0) // Daire için hesaplama yapılacaksa
+            if (circleButton.Checked && radiusBox.TextLength > 0) // Calculation for circle
             {
                 if (double.TryParse(radiusBox.Text, out double radius) && radius > 0)
                 {
@@ -146,9 +148,9 @@ namespace Perimeter_AreaCalculatorFormApp
                     resultGroupBox.Show();
                 }
                 else
-                    MessageBox.Show("Lütfen geçerli bir yarıçap uzunluğu giriniz!");
+                    MessageBox.Show("Please enter a valid radius length!");
             }
-            else if (squareButton.Checked && sideBox1.TextLength > 0) // Kare için hesaplama yapılacaksa
+            else if (squareButton.Checked && sideBox1.TextLength > 0) // Calculation for square
             {
                 if (double.TryParse(sideBox1.Text, out double side) && side > 0)
                 {
@@ -163,10 +165,10 @@ namespace Perimeter_AreaCalculatorFormApp
                     resultGroupBox.Show();
                 }
                 else
-                    MessageBox.Show("Lütfen geçerli bir kenar uzunluğu giriniz!");
+                    MessageBox.Show("Please enter a valid side length!");
             }
             else if (rectangleButton.Checked && sideBox1.TextLength > 0 &&
-                sideBox2.TextLength > 0) // Dikdörtgen için hesaplama yapılacaksa
+                sideBox2.TextLength > 0) // Calculation for rectangle
             {
                 if (double.TryParse(sideBox1.Text, out double side1) && side1 > 0 &&
                     double.TryParse(sideBox2.Text, out double side2) && side2 > 0 && side1 != side2)
@@ -182,10 +184,10 @@ namespace Perimeter_AreaCalculatorFormApp
                     resultGroupBox.Show();
                 }
                 else
-                    MessageBox.Show("Lütfen geçerli kenar uzunlukları giriniz!");
+                    MessageBox.Show("Please enter valid side lengthes!");
             }
             else if (triangleButton.Checked && sideBox1.TextLength > 0 &&
-                sideBox2.TextLength > 0 && sideBox3.TextLength > 0) // Üçgen için hesaplama yapılacaksa
+                sideBox2.TextLength > 0 && sideBox3.TextLength > 0) // Calculation for triangle
             {
 
                 if (double.TryParse(sideBox1.Text, out double side1) && side1 > 0 &&
@@ -193,31 +195,32 @@ namespace Perimeter_AreaCalculatorFormApp
                     double.TryParse(sideBox3.Text, out double side3) && side3 > 0)
                 {
                     perimeter = side1 + side2 + side3;
-                    area = Math.Sqrt(perimeter * (perimeter - side1) * 
-                        (perimeter - side2) * (perimeter - side3));
+                    double u = perimeter / 2;
+                    area = Math.Sqrt(u * (u - side1) * 
+                        (u - side2) * (u - side3));
 
                     perimeterBox.Text = perimeter.ToString();
                     areaBox.Text = area.ToString();
 
-                    // Üçgen tipi belirle
+                    // Determine the triangle type
                     String triangleType = "";
                     if (side1 + side2 <= side3 || side1 + side3 <= side2 ||
                             side2 + side3 <= side1)
                     {
-                        triangleType = "Üçgen Oluşmaz";
+                        triangleType = "Triangle Doesn't Form";
                         perimeterLabel.Hide();
                         perimeterBox.Hide();
                         areaLabel.Hide();
                         areaBox.Hide();
                     }
-                    else if (side1 == side2 && side2 == side3) // Eşkenar Üçgen
-                        triangleType = "Eşkenar Üçgen";
+                    else if (side1 == side2 && side2 == side3) // Equilateral Triangle
+                        triangleType = "Equilateral Triangle";
                     else if (side1 == side2 || side1 == side3 || side2 == side3)
-                        triangleType = "İkizkenar Üçgen";
+                        triangleType = "Isosceles Triangle";
                     else
-                        triangleType = "Çeşitkenar Üçgen";
+                        triangleType = "Scalene Triangle";
 
-                    if (triangleType != "Üçgen Oluşmaz")
+                    if (triangleType != "Triangle Doesn't Form")
                     {
                         perimeterLabel.Show();
                         perimeterBox.Show();
@@ -231,10 +234,10 @@ namespace Perimeter_AreaCalculatorFormApp
                     resultGroupBox.Show();
                 }
                 else
-                    MessageBox.Show("Lütfen geçerli kenar uzunlukları giriniz!");
+                    MessageBox.Show("Please enter valid side lengthes!");
             }
-            else // İstenen hiçbir şart karşılanmazsa uyarı mesajı ver
-                MessageBox.Show("Lütfen seçtiğiniz şekil için uygun uzunluklar giriniz!");
+            else // Give a warning message if none of the required conditions are met
+                MessageBox.Show("Please enter the appropriate lengths for the shape you choose!");
         }
 
     }
