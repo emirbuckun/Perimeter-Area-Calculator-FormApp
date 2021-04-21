@@ -193,8 +193,9 @@ namespace Perimeter_AreaCalculatorFormApp
                     double.TryParse(sideBox3.Text, out double side3) && side3 > 0)
                 {
                     perimeter = side1 + side2 + side3;
-                    area = Math.Sqrt(perimeter * (perimeter - side1) * 
-                        (perimeter - side2) * (perimeter - side3));
+                    double u = perimeter / 2;
+                    area = Math.Sqrt(u * (u - side1) * 
+                        (u - side2) * (u - side3));
 
                     perimeterBox.Text = perimeter.ToString();
                     areaBox.Text = area.ToString();
